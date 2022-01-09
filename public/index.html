@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firebase Basics</title>
+    <title>Firebase</title>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -21,7 +21,9 @@
 
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
+
+        // Initialize Firebase
+        firebase.initializeApp({
             apiKey: "AIzaSyC82dw-byYpy2S6FlPU-FefrY6j3Q9VICw",
             authDomain: "fir-basics-74893.firebaseapp.com",
             projectId: "fir-basics-74893",
@@ -29,25 +31,16 @@
             messagingSenderId: "753442217633",
             appId: "1:753442217633:web:11f6b77cd7d82deaeedae0",
             measurementId: "G-2096VR3X1T"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
+        });
     </script>
-
     <script src="app.js" defer></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <h1>Hello World!</h1>
 
     <section id="whenSignedOut">
         <button id="signInBtn" class="btn btn-primary">Google Sign in</button>
