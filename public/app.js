@@ -1,5 +1,3 @@
-
-
 //global variable
 console.log(firebase)
 
@@ -10,6 +8,7 @@ const signOutBtn = document.getElementById('signOutBtn');
 const userDetails = document.getElementById('userDetails');
 const whenSignedOut = document.getElementById('whenSignedOut');
 const whenSignedIn = document.getElementById('whenSignedIn');
+const authHeading = document.getElementById('authHeading');
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -24,10 +23,15 @@ auth.onAuthStateChanged(user => {
         // signed in
         whenSignedIn.hidden = false;
         whenSignedOut.hidden = true;
-        userDetails.innerHTML = `<h3>Hello ${user.displayName}! with User UID - ${user.uid}</h3>`;
+        authHeading.hidden = true;
+        userDetails.innerHTML = `<div>
+                                    <h3>Hello ${user.displayName}! with User UID - ${user.uid}</h3>
+                                    <h6>Your email id ${user.email}</h6>
+                                </div>`;
     } else {
         // signed out
         whenSignedIn.hidden = true;
+        authHeading.hidden = false;
         whenSignedOut.hidden = false;
         userDetails.innerHTML = '';
     }
